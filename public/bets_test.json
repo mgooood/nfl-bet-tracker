@@ -1,0 +1,34 @@
+[
+  {
+    "week": 1,
+    "date": "09/08/2025",
+    "description": "Season opener bet",
+    "opponent": "Alice",
+    "outcome": "win",
+    "amount": 5
+  },
+  {
+    "week": 2,
+    "date": "09/15/2025",
+    "description": "Divisional matchup",
+    "opponent": "Bob",
+    "outcome": "loss",
+    "amount": -10
+  },
+  {
+    "week": 3,
+    "date": "09/22/2025",
+    "description": "Over/Under bet",
+    "opponent": "Charlie",
+    "outcome": "pending",
+    "amount": 0
+  },
+  {
+    "week": 4,
+    "date": "09/29/2025",
+    "description": "Spread bet",
+    "opponent": "Alice",
+    "outcome": "pending",
+    "amount": 15
+  }
+]
