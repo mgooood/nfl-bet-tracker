@@ -20,7 +20,9 @@ Each bet has:
 - description: string
 - opponent: string
 - outcome: "win" | "loss" | "pending"
-- amount: number (signed; positive = I’m owed, negative = I owe)
+- amount: number (absolute; sign is derived from `outcome` — win = +amount, loss = -amount, pending excluded)
+
+Note: Existing data that may contain negative amounts will be interpreted using the absolute value together with the outcome, so you do not need to manually edit older entries.
 
 ## How Data Persistence Works
 

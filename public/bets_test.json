@@ -20,7 +20,7 @@
     "date": "09/22/2025",
     "description": "Over/Under bet",
     "opponent": "Charlie",
-    "outcome": "pending",
+    "outcome": "win",
     "amount": 0
   },
   {
@@ -28,7 +28,7 @@
     "date": "09/29/2025",
     "description": "Spread bet",
     "opponent": "Alice",
-    "outcome": "pending",
+    "outcome": "loss",
     "amount": 15
   },
   {
@@ -36,7 +36,7 @@
     "date": "10/29/2025",
     "description": "Spread bet",
     "opponent": "Alice",
-    "outcome": "pending",
+    "outcome": "loss",
     "amount": 30
   }
 ]

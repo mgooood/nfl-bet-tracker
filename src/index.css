@@ -16,6 +16,12 @@
   --color-negative: #ef4444; /* red-500 */
   --focus-ring: 2px solid #93c5fd; /* blue-300 */
 
+  /* Outcome glows (very subtle) */
+  --glow-win-ring: rgba(16, 185, 129, 0.35);   /* emerald-500 @ 35% */
+  --glow-win-ambient: rgba(16, 185, 129, 0.18);
+  --glow-loss-ring: rgba(239, 68, 68, 0.35);   /* red-500 @ 35% */
+  --glow-loss-ambient: rgba(239, 68, 68, 0.18);
+
   /* Typography & spacing */
   --font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
     'Apple Color Emoji', 'Segoe UI Emoji';
@@ -312,6 +318,19 @@ textarea:focus-visible {
     var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
+}
+
+/* Outcome modifiers using a gentle glow. Pending has no modifier. */
+.bet--win {
+  box-shadow:
+    0 0 0 1px var(--glow-win-ring),
+    0 8px 18px var(--glow-win-ambient);
+}
+
+.bet--loss {
+  box-shadow:
+    0 0 0 1px var(--glow-loss-ring),
+    0 8px 18px var(--glow-loss-ambient);
 }
 
 .bet-grid {

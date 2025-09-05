@@ -4,7 +4,7 @@ import OpponentSummary from './components/OpponentSummary.jsx'
 import AddBetForm from './components/AddBetForm.jsx'
 import BetsList from './components/BetsList.jsx'
 import { readLocalBets, saveLocalBets, fetchPublicBets } from './utils/storage.js'
-import { normalizeBet } from './utils/format.js'
+import { normalizeBet, signedAmountForBet } from './utils/format.js'
 
 function App() {
   // State for the bets list and data loading
@@ -40,14 +40,15 @@ function App() {
   }, [bets])
 
   const totalBalance = useMemo(() => {
-    return finalizedBets.reduce((sum, bet) => sum + (Number(bet.amount) || 0), 0)
+    // Sum signed amounts derived from the outcome.
+    return finalizedBets.reduce((sum, bet) => sum + signedAmountForBet(bet), 0)
   }, [finalizedBets])
 
   const opponentSummary = useMemo(() => {
     const map = new Map()
     for (const bet of finalizedBets) {
       const key = bet.opponent?.trim() || 'Unknown'
-      const amt = Number(bet.amount) || 0
+      const amt = signedAmountForBet(bet)
       map.set(key, (map.get(key) || 0) + amt)
     }
     return Array.from(map.entries()).sort((aEntry, bEntry) => aEntry[0].localeCompare(bEntry[0]))

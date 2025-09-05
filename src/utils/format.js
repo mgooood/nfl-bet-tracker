@@ -56,3 +56,16 @@ export function normalizeBet(raw) {
     amount: Number(raw.amount) || 0,
   };
 }
+
+// Derive the signed amount for a bet based on its outcome.
+// - We treat the stored amount as an absolute wager value.
+// - win => +abs(amount)  (they owe me)
+// - loss => -abs(amount) (I owe them)
+// - pending => 0         (excluded from balances)
+export function signedAmountForBet(bet) {
+  const abs = Math.abs(Number(bet?.amount) || 0);
+  const outcome = String(bet?.outcome || '').trim();
+  if (outcome === 'win') return abs;
+  if (outcome === 'loss') return -abs;
+  return 0;
+}

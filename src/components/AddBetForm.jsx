@@ -38,7 +38,7 @@ export default function AddBetForm({ onAdd }) {
       return alert('Please choose a valid outcome.');
     if (Number.isNaN(amtNum))
       return alert(
-        'Please enter a valid amount (use negative for you owe, positive for you are owed).'
+        'Please enter a valid amount (just the wager size; sign will be determined by outcome).'
       );
 
     onAdd({
@@ -47,7 +47,8 @@ export default function AddBetForm({ onAdd }) {
       description,
       opponent,
       outcome,
-      amount: amtNum,
+      // Store absolute amount; sign is derived from outcome throughout the app.
+      amount: Math.abs(amtNum),
     });
     reset();
   }
@@ -131,7 +132,7 @@ export default function AddBetForm({ onAdd }) {
               type="number"
               inputMode="decimal"
               step="0.01"
-              placeholder="e.g., 5 or -10"
+              placeholder="e.g., 5"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               required
