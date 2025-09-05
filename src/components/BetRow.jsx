@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { formatCurrency, signedAmountForBet } from '../utils/format.js'
+import { formatCurrency, formatCurrencyUnsigned, signedAmountForBet } from '../utils/format.js'
 import { OUTCOMES } from '../utils/constants.js'
 
 // A single bet row with inline edit for outcome and amount only.
@@ -61,7 +61,11 @@ export default function BetRow({ bet, index, onUpdate }) {
           {editing ? (
             <input type="number" inputMode="decimal" step="0.01" value={editAmount} onChange={(e) => setEditAmount(e.target.value)} aria-label="Edit amount" />
           ) : (
-            <span className={signedAmountForBet(bet) >= 0 ? 'value positive' : 'value negative'}>{formatCurrency(signedAmountForBet(bet))}</span>
+            bet.outcome === 'pending' ? (
+              <span className="value" title="Pending (excluded from totals)">{formatCurrencyUnsigned(bet.amount)}</span>
+            ) : (
+              <span className={signedAmountForBet(bet) >= 0 ? 'value positive' : 'value negative'}>{formatCurrency(signedAmountForBet(bet))}</span>
+            )
           )}
         </div>
       </div>

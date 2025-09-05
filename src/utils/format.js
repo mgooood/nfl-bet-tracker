@@ -17,6 +17,23 @@ export function formatCurrency(amount) {
   }
 }
 
+// Format currency without a sign (e.g., $5.00), useful for pending bets where we
+// want to show the wager amount but not imply gain/loss.
+export function formatCurrencyUnsigned(amount) {
+  try {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      signDisplay: 'never',
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 2,
+    }).format(Math.abs(Number(amount) || 0));
+  } catch {
+    const num = Math.abs(Number(amount) || 0);
+    return `$${num.toFixed(2)}`;
+  }
+}
+
 // Validate simple MM/DD/YYYY format (not exhaustive calendar validation)
 export function isValidDateMMDDYYYY(value) {
   const re = /^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/\d{4}$/;
