@@ -10,6 +10,8 @@ function App() {
   // State for the bets list and data loading
   const [bets, setBets] = useState([])
   const [loaded, setLoaded] = useState(false)
+  // Controls visibility of the "Add New Bet" form panel
+  const [isAddBetOpen, setIsAddBetOpen] = useState(false)
 
   // On first load: try localStorage; if missing, seed from public/bets.json
   useEffect(() => {
@@ -65,6 +67,15 @@ function App() {
     )
   }
 
+  // Explicit controls for opening/closing the Add New Bet panel
+  function handleOpenAddBet() {
+    setIsAddBetOpen(true)
+  }
+
+  function handleCloseAddBet() {
+    setIsAddBetOpen(false)
+  }
+
   function handleExport() {
     const json = JSON.stringify(bets, null, 2)
     const blob = new Blob([json], { type: 'application/json' })
@@ -85,7 +96,12 @@ function App() {
       <Header totalBalance={totalBalance} onExport={handleExport} />
       <main className="content" role="main">
         <OpponentSummary summary={opponentSummary} />
-        <AddBetForm onAdd={handleAddBet} />
+        <AddBetForm
+          isOpen={isAddBetOpen}
+          onOpen={handleOpenAddBet}
+          onCancel={handleCloseAddBet}
+          onAdd={handleAddBet}
+        />
         <BetsList bets={bets} onUpdate={handleUpdateBet} />
       </main>
     </div>

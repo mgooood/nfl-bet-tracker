@@ -6,7 +6,7 @@ export default function BetsList({ bets, onUpdate }) {
     return (
       <section className="panel" aria-labelledby="bets-list-heading">
         <h2 id="bets-list-heading" className="section-title">All Bets</h2>
-        <p className="muted">No bets yet. Add your first bet above.</p>
+        <p className="muted">No bets yet. Tap "Add New Bet" to create your first bet.</p>
       </section>
     )
   }
