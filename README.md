@@ -1,6 +1,6 @@
 # NFL Bet Tracker
 
-A simple, client-only React app to track NFL bets. Initial data loads from [public/bets.json](cci:7://file:///Users/markgood/Projects/nfl-bet-tracker/public/bets.json:0:0-0:0). Edits are saved only to `localStorage` on your device. Use “Export Data” to download the current list as JSON to update the official [bets.json](cci:7://file:///Users/markgood/Projects/nfl-bet-tracker/public/bets.json:0:0-0:0).
+A simple, client-only React app to track NFL bets. Initial data loads from [public/bets.json](public/bets.json). Edits are saved only to `localStorage` on your device. Use “Export Data” to download the current list as JSON to update the official [bets.json](public/bets.json).
 
 ## Live Demo
 
@@ -8,7 +8,7 @@ A simple, client-only React app to track NFL bets. Initial data loads from [publ
 
 ## Features
 
-- Load initial bets from [public/bets.json](cci:7://file:///Users/markgood/Projects/nfl-bet-tracker/public/bets.json:0:0-0:0)
+- Load initial bets from [public/bets.json](public/bets.json)
 - Local-only persistence (no backend)
 - Add new bets (all fields required)
 - Edit outcome and amount only (MVP scope)
@@ -30,10 +30,10 @@ Note: Existing data that may contain negative amounts will be interpreted using 
 
 ## How Data Persistence Works
 
-1. On first visit, if no local data exists, the app seeds from [public/bets.json](cci:7://file:///Users/markgood/Projects/nfl-bet-tracker/public/bets.json:0:0-0:0).
+1. On first visit, if no local data exists, the app seeds from [public/bets.json](public/bets.json).
 2. After that, all changes are written to `localStorage` (`nfl-bet-tracker:bets`).
 3. Use Export Data to download current local data as JSON.
-4. To update the official data for all visitors, replace [public/bets.json](cci:7://file:///Users/markgood/Projects/nfl-bet-tracker/public/bets.json:0:0-0:0) in the repo with the exported file and push.
+4. To update the official data for all visitors, replace [public/bets.json](public/bets.json) in the repo with the exported file and push.
 
 ## Getting Started
 
@@ -44,16 +44,18 @@ Note: Existing data that may contain negative amounts will be interpreted using 
 
 ## GitHub Pages (Project Page)
 
-This repo is deployed as a project page. The Vite base is set to `/nfl-bet-tracker/` in [vite.config.js](cci:7://file:///Users/markgood/Projects/nfl-bet-tracker/vite.config.js:0:0-0:0).
+This repo auto-deploys to GitHub Pages on pushes to `main` via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). The Vite base is set to `/nfl-bet-tracker/` in [vite.config.js](vite.config.js).
 
-1. Run `npm run build`.
-2. Publish the `dist/` folder to the `gh-pages` branch using the GitHub UI (or a tool of your choice).
-3. Ensure Pages is configured to serve from `gh-pages`.
+Deploy pipeline summary:
 
-If you change the repo name, update [vite.config.js](cci:7://file:///Users/markgood/Projects/nfl-bet-tracker/vite.config.js:0:0-0:0):
+1. Push to `main`.
+2. GitHub Actions builds the app (`npm ci && npm run build`).
+3. The Pages artifact from `dist/` is deployed automatically.
+
+If you rename the repo, update `base` in [vite.config.js](vite.config.js):
 
 ```js
 export default defineConfig({
   base: '/your-repo-name/',
-});
+})
 ```
