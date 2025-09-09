@@ -2,6 +2,10 @@
 
 A simple, client-only React app to track NFL bets. Initial data loads from [public/bets.json](cci:7://file:///Users/markgood/Projects/nfl-bet-tracker/public/bets.json:0:0-0:0). Edits are saved only to `localStorage` on your device. Use “Export Data” to download the current list as JSON to update the official [bets.json](cci:7://file:///Users/markgood/Projects/nfl-bet-tracker/public/bets.json:0:0-0:0).
 
+## Live Demo
+
+- https://mgooood.github.io/nfl-bet-tracker/
+
 ## Features
 
 - Load initial bets from [public/bets.json](cci:7://file:///Users/markgood/Projects/nfl-bet-tracker/public/bets.json:0:0-0:0)
