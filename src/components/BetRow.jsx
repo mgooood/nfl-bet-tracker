@@ -45,7 +45,7 @@ export default function BetRow({ bet, index, onUpdate }) {
           <span className="value">{bet.opponent}</span>
         </div>
         <div className="bet-field">
-          <span className="label">Outcome</span>
+          <span className="label">Your Result</span>
           {editing ? (
             <select value={editOutcome} onChange={(e) => setEditOutcome(e.target.value)} aria-label="Edit outcome">
               {OUTCOMES.map((o) => (
@@ -82,3 +82,4 @@ export default function BetRow({ bet, index, onUpdate }) {
     </article>
   )
 }
+
