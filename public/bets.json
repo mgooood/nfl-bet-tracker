@@ -1,5 +1,13 @@
 [
   {
+    "week": 2,
+    "date": "09/11/2025",
+    "description": "Team with highest score wins 5 dollars, Terry pays 5 on ties.",
+    "opponent": "Terry",
+    "outcome": "pending",
+    "amount": 5
+  },
+  {
     "week": 1,
     "date": "09/04/2025",
     "description": "Team with highest score wins five dollars.",
@@ -8,3 +16,4 @@
     "amount": 5
   }
 ]
+
