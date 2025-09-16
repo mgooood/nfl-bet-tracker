@@ -35,3 +35,13 @@ export async function fetchPublicBets(baseUrl = import.meta.env.BASE_URL || '/')
     return []
   }
 }
+
+// Clear only this app's stored bets key from localStorage.
+// Avoid using localStorage.clear() to not wipe other apps on the same origin.
+export function clearLocalBets() {
+  try {
+    localStorage.removeItem(STORAGE_KEY)
+  } catch {
+    // ignore errors (e.g., storage disabled)
+  }
+}

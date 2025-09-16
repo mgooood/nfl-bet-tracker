@@ -17,9 +17,9 @@
   --focus-ring: 2px solid #93c5fd; /* blue-300 */
 
   /* Outcome glows (very subtle) */
-  --glow-win-ring: rgba(16, 185, 129, 0.35);   /* emerald-500 @ 35% */
+  --glow-win-ring: rgba(16, 185, 129, 0.35); /* emerald-500 @ 35% */
   --glow-win-ambient: rgba(16, 185, 129, 0.18);
-  --glow-loss-ring: rgba(239, 68, 68, 0.35);   /* red-500 @ 35% */
+  --glow-loss-ring: rgba(239, 68, 68, 0.35); /* red-500 @ 35% */
   --glow-loss-ambient: rgba(239, 68, 68, 0.18);
 
   /* Typography & spacing */
@@ -128,6 +128,62 @@ svg {
   margin: var(--space-2) 0 0;
   color: var(--color-muted);
   font-size: 0.95rem;
+}
+
+/* Settings (gear menu) */
+.settings-gear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.6rem; /* 10% smaller than doubled */
+  height: 4.6rem;
+  padding: 0;
+  border-radius: 9999px;
+  background: var(--color-input);
+}
+
+.settings-gear svg {
+  color: var(--color-text);
+  width: 2.5rem; /* 10% smaller than doubled */
+  height: 2.5rem;
+}
+
+.settings-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  min-width: 220px;
+  padding: var(--space-2);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.settings-item {
+  appearance: none;
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: var(--color-text);
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.settings-item:hover,
+.settings-item:focus-visible {
+  background: var(--color-input);
+  outline: none;
+}
+
+.settings-item--danger {
+  color: var(--color-negative);
 }
 
 /* Panels */
@@ -322,14 +378,11 @@ textarea:focus-visible {
 
 /* Outcome modifiers using a gentle glow. Pending has no modifier. */
 .bet--win {
-  box-shadow:
-    0 0 0 1px var(--glow-win-ring),
-    0 8px 18px var(--glow-win-ambient);
+  box-shadow: 0 0 0 1px var(--glow-win-ring), 0 8px 18px var(--glow-win-ambient);
 }
 
 .bet--loss {
-  box-shadow:
-    0 0 0 1px var(--glow-loss-ring),
+  box-shadow: 0 0 0 1px var(--glow-loss-ring),
     0 8px 18px var(--glow-loss-ambient);
 }
 

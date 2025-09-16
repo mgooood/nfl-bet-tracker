@@ -3,7 +3,7 @@ import Header from './components/Header.jsx'
 import OpponentSummary from './components/OpponentSummary.jsx'
 import AddBetForm from './components/AddBetForm.jsx'
 import BetsList from './components/BetsList.jsx'
-import { readLocalBets, saveLocalBets, fetchPublicBets } from './utils/storage.js'
+import { readLocalBets, saveLocalBets, fetchPublicBets, clearLocalBets } from './utils/storage.js'
 import { normalizeBet, signedAmountForBet } from './utils/format.js'
 
 function App() {
@@ -91,9 +91,35 @@ function App() {
     URL.revokeObjectURL(url)
   }
 
+  // Clear local storage and immediately reseed from the official public data (Option B).
+  // We briefly set `loaded` to false to pause the persistence effect so we don't
+  // write an empty array back to storage during the transition. This keeps the
+  // side-effects minimal and predictable.
+  async function handleClear() {
+    const confirmed = window.confirm(
+      'This will remove your local changes on this device and reload official seed data. Continue?'
+    )
+    if (!confirmed) return
+
+    try {
+      // Pause persistence and show immediate UI feedback
+      setLoaded(false)
+      setBets([])
+      clearLocalBets()
+
+      // Reseed from public/bets.json and restore normal persistence
+      const seeded = await fetchPublicBets()
+      setBets(seeded)
+      setLoaded(true)
+    } catch {
+      // In case of a fetch error we still leave the UI empty and re-enable persistence
+      setLoaded(true)
+    }
+  }
+
   return (
     <div className="app">
-      <Header totalBalance={totalBalance} onExport={handleExport} />
+      <Header totalBalance={totalBalance} onExport={handleExport} onClear={handleClear} />
       <main className="content" role="main">
         <OpponentSummary summary={opponentSummary} />
         <AddBetForm
