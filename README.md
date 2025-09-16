@@ -35,6 +35,14 @@ Note: Existing data that may contain negative amounts will be interpreted using 
 3. Use Export Data to download current local data as JSON.
 4. To update the official data for all visitors, replace [public/bets.json](public/bets.json) in the repo with the exported file and push.
 
+## Attributions
+
+- Header settings gear icon derived from Font Awesome Free 6 “gear” (solid).
+  - Icon: https://fontawesome.com/icons/gear?s=solid
+  - Copyright: Fonticons, Inc.
+  - License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+  - Notes: Path data is unmodified; only sized and colored via CSS using `currentColor`.
+
 ## Getting Started
 
 - Install: `npm install`
