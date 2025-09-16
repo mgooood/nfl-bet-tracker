@@ -4,7 +4,7 @@
     "date": "09/11/2025",
     "description": "Team with highest score wins 5 dollars, Terry pays 5 on ties.",
     "opponent": "Terry",
-    "outcome": "pending",
+    "outcome": "loss",
     "amount": 5
   },
   {
@@ -16,4 +16,5 @@
     "amount": 5
   }
 ]
+
 
