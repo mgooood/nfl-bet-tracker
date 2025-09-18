@@ -1,5 +1,13 @@
 [
   {
+    "week": 3,
+    "date": "09/18/2025",
+    "description": "You beat me, you get $5 from me.  I beat you, you get $5 from me.  If we tie, I pay you $5.",
+    "opponent": "Terry",
+    "outcome": "pending",
+    "amount": 5
+  },
+  {
     "week": 2,
     "date": "09/11/2025",
     "description": "Team with highest score wins 5 dollars, Terry pays 5 on ties.",
@@ -16,5 +24,3 @@
     "amount": 5
   }
 ]
-
-
