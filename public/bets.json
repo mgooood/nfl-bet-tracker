@@ -1,5 +1,13 @@
 [
   {
+    "week": 5,
+    "date": "10/03/2025",
+    "description": "Most points wins 5, ties are a push",
+    "opponent": "Terry",
+    "outcome": "loss",
+    "amount": 5
+  },
+  {
     "week": 4,
     "date": "09/25/2025",
     "description": "Terry is giving a 1 point spread plus ties go to me.",
