@@ -1,5 +1,13 @@
 [
   {
+    "week": 6,
+    "date": "10/11/2025",
+    "description": "Most points wins five dollars, ties are a push.",
+    "opponent": "Terry",
+    "outcome": "pending",
+    "amount": 5
+  },
+  {
     "week": 5,
     "date": "10/03/2025",
     "description": "Most points wins 5, ties are a push",
