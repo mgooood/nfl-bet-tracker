@@ -24,6 +24,7 @@ export default function BetRow({ bet, index, onUpdate }) {
 
   // Choose a subtle visual modifier based on the outcome
   const outcomeClass = bet.outcome === 'win' ? 'bet--win' : bet.outcome === 'loss' ? 'bet--loss' : ''
+  const isPending = bet.outcome === 'pending'
 
   return (
     <article className={`bet ${outcomeClass}`} aria-label={`Bet vs ${bet.opponent} on ${bet.date}`}>
@@ -76,7 +77,9 @@ export default function BetRow({ bet, index, onUpdate }) {
             <button className="btn btn-secondary" onClick={handleCancel} aria-label="Cancel editing">Cancel</button>
           </>
         ) : (
-          <button className="btn btn-secondary" onClick={() => setEditing(true)} aria-label="Edit bet">Edit</button>
+          isPending && (
+            <button className="btn btn-secondary" onClick={() => setEditing(true)} aria-label="Edit bet">Edit</button>
+          )
         )}
       </div>
     </article>
