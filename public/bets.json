@@ -2,7 +2,7 @@
   {
     "week": 8,
     "date": "10/24/2025",
-    "description": "If I beat you, you owe me $5.  If you beat me, I owe you $5.  If we tie, I owe you $5.",
+    "description": "Terry says, If I beat you, you owe me $5.  If you beat me, I owe you $5.  If we tie, I owe you $5.",
     "opponent": "Terry",
     "outcome": "pending",
     "amount": 5
