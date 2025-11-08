@@ -1,4 +1,12 @@
-[
+[ 
+  {
+    "week": 10,
+    "date": "11/08/2025",
+    "description": "BET TWO:  If I score less than 120 points, I pay you $10.  If I score more than or equal to 120 points, you pay me $5.",
+    "opponent": "Terry",
+    "outcome": "pending",
+    "amount": 10
+  },
   {
     "week": 9,
     "date": "11/01/2025",
