@@ -4,8 +4,8 @@
     "date": "11/08/2025",
     "description": "BET TWO:  Terry says, If I score less than 120 points, I pay you $10.  If I score more than or equal to 120 points, you pay me $5.",
     "opponent": "Terry",
-    "outcome": "pending",
-    "amount": 10
+    "outcome": "loss",
+    "amount": 5
   },
   {
     "week": 9,
