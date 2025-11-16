@@ -1,5 +1,13 @@
 [ 
   {
+    "week": 11,
+    "date": "11/15/2025",
+    "description": "If your weekly total points is greater than my total points, I will pay you $5.  If your weekly total points is less than my total points, you will pay me $5.  If our weekly total points are the same (i.e. a tie), I will pay you $5.",
+    "opponent": "Terry",
+    "outcome": "pending",
+    "amount": 5
+  },
+  {
     "week": 10,
     "date": "11/08/2025",
     "description": "BET TWO:  Terry says, If I score less than 120 points, I pay you $10.  If I score more than or equal to 120 points, you pay me $5.",
