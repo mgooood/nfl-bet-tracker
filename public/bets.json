@@ -1,5 +1,13 @@
 [ 
   {
+    "week": 13,
+    "date": "11/27/2025",
+    "description": "You win, I pay you 5  I win, you pay me 5.  If we tie, I pay you 5",
+    "opponent": "Terry",
+    "outcome": "pending",
+    "amount": 5
+  },
+  {
     "week": 11,
     "date": "11/15/2025",
     "description": "If your weekly total points is greater than my total points, I will pay you $5.  If your weekly total points is less than my total points, you will pay me $5.  If our weekly total points are the same (i.e. a tie), I will pay you $5.",
