@@ -1,5 +1,21 @@
 [ 
   {
+    "week": 16,
+    "date": "12/19/2025",
+    "description": "If I fail to finish in the top 3 in total points for the week, I pay you $5.  If I finish in the top 3, then you pay me $5.",
+    "opponent": "Terry",
+    "outcome": "win",
+    "amount": 5
+  },
+  {
+    "week": 16,
+    "date": "12/19/2025",
+    "description": "If you beat me, I pay you $5.  If I beat you, you pay me $5.",
+    "opponent": "Terry",
+    "outcome": "loss",
+    "amount": 5
+  },
+  {
     "week": 15,
     "date": "12/14/2025",
     "description": "You win, I pay you 5, I win, you pay me 5. If we tie, I pay you 5",
