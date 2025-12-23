@@ -2,7 +2,7 @@
   {
     "week": 16,
     "date": "12/19/2025",
-    "description": "If I fail to finish in the top 3 in total points for the week, I pay you $5.  If I finish in the top 3, then you pay me $5.",
+    "description": "(week 16 double bet) If I fail to finish in the top 3 in total points for the week, I pay you $5.  If I finish in the top 3, then you pay me $5.",
     "opponent": "Terry",
     "outcome": "win",
     "amount": 5
@@ -10,7 +10,7 @@
   {
     "week": 16,
     "date": "12/19/2025",
-    "description": "If you beat me, I pay you $5.  If I beat you, you pay me $5.",
+    "description": "(week 16 double bet) If you beat me, I pay you $5.  If I beat you, you pay me $5.",
     "opponent": "Terry",
     "outcome": "loss",
     "amount": 5
