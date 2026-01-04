@@ -1,5 +1,13 @@
 [ 
   {
+    "week": 18,
+    "date": "01/02/2026",
+    "description": "Team with most points win five",
+    "opponent": "Terry",
+    "outcome": "pending",
+    "amount": 5
+  },
+  {
     "week": 17,
     "date": "12/24/2025",
     "description": "If you beat me, I will pay you $10.  If you beat me or we tie, you pay me $5.",
